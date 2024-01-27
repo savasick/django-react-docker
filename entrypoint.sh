@@ -6,6 +6,8 @@ while ! nc -z $DB_HOST $DB_PORT ; do sleep 5 ; done ; \
 
 echo "PostgreSQL started"; \
 
+python manage.py makemigrations --no-input; \
+
 python manage.py migrate --no-input; \
 
 python manage.py collectstatic --no-input; \
