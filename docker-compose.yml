@@ -36,11 +36,18 @@ services:
       - django
 
   react:
-    build: ./frontend
+    build:
+      context: ./app/frontend
+    volumes:
+      - ./app/frontend:/app/frontend
+#      - /app/node_modules
     ports:
       - "3000:3000"
-    volumes:
-      - ./frontend:/frontend
+#    environment:
+#      - NODE_ENV=development
+#      - NODE_PATH=./src
+    depends_on:
+      - django  
 
 volumes:
   static:

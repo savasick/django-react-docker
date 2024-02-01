@@ -8,9 +8,9 @@ RUN pip install --upgrade pip
 COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY ./app /app
+COPY ./app/backend /app/backend
 
-WORKDIR /app
+WORKDIR /app/backend
 
 COPY ./entrypoint.dev.sh /
 ENTRYPOINT ["sh", "/entrypoint.dev.sh"]

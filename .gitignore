@@ -1,5 +1,4 @@
-/venv
-/app/db.sqlite3
-/app/src/__pycache__/
-/app/static/
-nohup.out
+/app/static/*
+!/app/static/.gitkeep
+/app/media/*
+!/app/media/.gitkeep
