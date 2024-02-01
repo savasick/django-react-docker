@@ -13,7 +13,7 @@ services:
     env_file:
       - .env
     ports:
-      - "80:80"
+      - "8000:80"
     depends_on:
       - db
 
@@ -32,12 +32,8 @@ services:
       context: ./app/frontend
     volumes:
       - ./app/frontend:/app/frontend
-#      - /app/node_modules
     ports:
       - "3000:3000"
-#    environment:
-#      - NODE_ENV=development
-#      - NODE_PATH=./src
     depends_on:
       - django  
 
