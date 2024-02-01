@@ -72,9 +72,7 @@ docker-compose down
 # Endpoints
 
 Reachable at:\
-<a href="http://localhost">localhost</a> ,
 <a href="http://localhost:8000">localhost:8000</a>\
-<a href="http://127.0.0.1">127.0.0.1</a> , 
 <a href="http://127.0.0.1:8000">127.0.0.1:8000</a>
 
 react:\
@@ -82,7 +80,7 @@ react:\
 <a href="http://127.0.0.1:3000">127.0.0.1:3000</a>
 
 Admin at:\
-<a href="http://localhost/admin">localhost/admin</a> ,
+<a href="http://localhost/admin">localhost/admin</a>\
 <a href="http://127.0.0.1/admin">127.0.0.1/admin</a>
 
 ###### login / password for admin page: <strong> admin </strong>

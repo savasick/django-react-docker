@@ -3,6 +3,8 @@ FROM node:21.6.1
 WORKDIR /app/frontend/
 
 COPY package*.json /app/frontend/
+
+#RUN npm install react-scripts
 RUN npm install
 
 COPY . /app/frontend/
