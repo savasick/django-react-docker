@@ -1,16 +1,56 @@
-# Django Account
+# Django, React with docker-compose
 
-Repo include `django` , `gunicorn` , `postgresql` , `nginx`
+Repo include `django` , `gunicorn` , `postgresql` , `nginx`, `react.js`
 
-Hosted locally
 
-Account by Abstract User
 
-# Usage
+## Usage
+
+### Run locally
+
+<li>need python and npm</li>
+
+install
+```bash
+cd app/frontend
+npm install pm2 -g
+cd ../..
+python3 -m venv venv
+source venv/bin/activate
+pip3 install -r requirements.txt
+```
+###### comment all DB variables at .env file or change to local database
+
+start
+```bash
+nohup python3 app/backend/manage.py runserver 0.0.0.0:80 &
+cd app/frontend
+pm2 --name frontend start npm -- start
+cd ../..
+python3 manage.py makemigrations --no-input
+python3 app/backend/manage.py migrate --no-input
+
+python3 app/backend/manage.py collectstatic --no-input
+
+DJANGO_SUPERUSER_PASSWORD='admin'; python3 app/backend/manage.py createsuperuser --username 'admin' --email 'admin@email.com' --noinput
+```
+
+
+stop
+```bash
+pm2 delete 0
+pkill -f "manage.py runserver 0.0.0.0:80"
+```
+
+#
+
+### By docker
+
+<li>need docker and docker-compose</li>
 
 Run app:
 ```bash
-docker-compose up -d
+docker-compose up -d --build
 ```
 
 Run dev:
