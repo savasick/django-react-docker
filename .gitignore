@@ -2,3 +2,12 @@
 !/app/static/.gitkeep
 /app/media/*
 !/app/media/.gitkeep
+/venv
+nohup.out
+/app/backend/db.sqlite3
+/app/backend/src/__pycache__
+/app/backend/home/__pycache__
+/app/backend/api/__pycache__
+/app/backend/home/migrations/__pycache__
+/app/backend/api/migrations/__pycache__
+/app/backend/static/

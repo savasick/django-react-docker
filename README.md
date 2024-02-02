@@ -13,7 +13,7 @@ Repo include `django` , `gunicorn` , `postgresql` , `nginx`, `react.js`
 install
 ```bash
 cd app/frontend
-npm install pm2 -g
+npm install
 cd ../..
 python3 -m venv venv
 source venv/bin/activate
@@ -23,23 +23,22 @@ pip3 install -r requirements.txt
 
 start
 ```bash
-nohup python3 app/backend/manage.py runserver 0.0.0.0:80 &
-cd app/frontend
-pm2 --name frontend start npm -- start
-cd ../..
 python3 manage.py makemigrations --no-input
 python3 app/backend/manage.py migrate --no-input
 
 python3 app/backend/manage.py collectstatic --no-input
 
 DJANGO_SUPERUSER_PASSWORD='admin'; python3 app/backend/manage.py createsuperuser --username 'admin' --email 'admin@email.com' --noinput
+
+nohup python3 app/backend/manage.py runserver 0.0.0.0:8000 &
+cd app/frontend
+npm start
 ```
 
 
 stop
 ```bash
-pm2 delete 0
-pkill -f "manage.py runserver 0.0.0.0:80"
+pkill -f "manage.py runserver 0.0.0.0:8000"
 ```
 
 #
