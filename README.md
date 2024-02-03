@@ -3,8 +3,33 @@
 Repo include `django` , `gunicorn` , `postgresql` , `nginx`, `react.js`
 
 
-
 ## Usage
+
+### By docker
+
+<li>need docker and docker-compose</li>
+
+Run app:
+```bash
+docker-compose up -d --build
+```
+
+Run dev:
+```bash
+docker-compose -f docker-compose.dev.yml up -d --build
+```
+
+Logs app:
+```bash
+docker-compose logs -f
+```
+
+Down app:
+```bash
+docker-compose down
+```
+
+#
 
 ### Run locally
 
@@ -39,32 +64,6 @@ npm start
 stop
 ```bash
 pkill -f "manage.py runserver 0.0.0.0:8000"
-```
-
-#
-
-### By docker
-
-<li>need docker and docker-compose</li>
-
-Run app:
-```bash
-docker-compose up -d --build
-```
-
-Run dev:
-```bash
-docker-compose -f docker-compose.dev.yml up -d --build
-```
-
-Logs app:
-```bash
-docker-compose logs -f
-```
-
-Down app:
-```bash
-docker-compose down
 ```
 
 
